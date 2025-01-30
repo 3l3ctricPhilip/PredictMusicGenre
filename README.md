@@ -68,6 +68,16 @@ By the end of this project, we aim to deliver:
 
 This section summarizes the findings and insights gained from the automated data analysis report.
 
+![image](https://github.com/user-attachments/assets/4c2495a3-403a-4a9b-9182-8afc35d3bbbe)
+
+![image](https://github.com/user-attachments/assets/224ace77-640b-4385-a0e7-d0ca6ba758cf)
+
+![image](https://github.com/user-attachments/assets/1b6508a9-8599-4b65-971c-683deea3dfb2)
+
+![image](https://github.com/user-attachments/assets/78abc276-9ae0-4d2d-a3bc-e123b94fbaf3)
+
+![image](https://github.com/user-attachments/assets/bbd20606-94fe-4c21-8c12-52d368253399)
+
 ### **Dataset Overview**
 - **Number of variables:** 26
 - **Number of observations:** 19,860
