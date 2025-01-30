@@ -120,7 +120,3 @@ This section summarizes the findings and insights gained from the automated data
    - Models like **Random Forest** and **Gradient Boosting** can handle the dataset's characteristics effectively.
    - For reduced dimensions, linear models might be explored.
 
-### **Next Steps**
-- Prepare the dataset for modeling by addressing redundancy and handling zero values.
-- Perform additional feature engineering to optimize model performance.
-
