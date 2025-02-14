@@ -180,3 +180,54 @@ XGBoost is a powerful gradient boosting framework optimized for speed and perfor
 
 ## Chosen Model for Further Development
 The **RandomForestClassifier** has been selected for further development due to its balance between accuracy, interpretability, and robustness. It outperforms GaussianNB in terms of accuracy and is more stable than XGBoost, which showed convergence issues in this case. Random Forest’s ability to handle diverse feature sets makes it well-suited for music genre classification.
+
+# Music Genre Prediction - Model Evaluation
+
+## Model Performance Summary
+
+### Overall Accuracy
+The trained model achieved an **accuracy of 45.55%** on the validation dataset.
+
+### Classification Report
+Below is a detailed breakdown of the model's performance across different genres:
+
+| Class | Precision | Recall | F1-Score | Support |
+|--------|------------|--------|----------|---------|
+| **0**  | 0.41      | 0.29   | 0.34     | 971     |
+| **1**  | 0.45      | 0.57   | 0.50     | 1135    |
+| **2**  | 0.73      | 0.41   | 0.53     | 188     |
+| **3**  | 0.50      | 0.41   | 0.45     | 817     |
+| **4**  | 0.42      | 0.56   | 0.48     | 1482    |
+| **5**  | 0.50      | 0.44   | 0.47     | 518     |
+| **6**  | 0.50      | 0.36   | 0.42     | 847     |
+
+### Aggregate Metrics
+- **Accuracy:** 45.55%
+- **Macro Average:** Precision = 50%, Recall = 44%, F1-Score = 46%
+- **Weighted Average:** Precision = 46%, Recall = 46%, F1-Score = 45%
+
+## Confusion Matrix
+Below is the confusion matrix visualization of the model's predictions:
+
+![Confusion Matrix](confusion_matrix.png)
+
+## Analysis & Observations
+1. **Class Imbalance Issues:**
+   - Some classes (e.g., class **2**) have a **higher precision (0.73)** but lower recall (0.41), indicating that while it correctly identifies positive cases, it struggles to detect all relevant samples.
+   - Class **1** and **4** have relatively better recall, meaning the model detects more of their instances correctly.
+
+2. **Performance Improvement Areas:**
+   - **Increase Recall for Class 0 & 6:** These classes have relatively low recall, meaning the model misses many actual instances.
+   - **Fine-tune Hyperparameters:** Adjust `n_estimators`, `max_depth`, and learning rate to improve predictive performance.
+   - **Feature Engineering:** Explore additional transformations to improve separation between genres.
+   - **Balance the Dataset:** Apply **oversampling** (e.g., SMOTE) or **undersampling** to ensure even representation.
+
+## Next Steps
+- Implement hyperparameter tuning with `GridSearchCV` or `RandomizedSearchCV`.
+- Try **alternative models** such as XGBoost or LightGBM.
+- Optimize the **threshold for classification** to improve recall and precision balance.
+- Deploy the model and monitor real-world performance to refine further.
+
+---
+
+**This document serves as the model evaluation summary for the Music Genre Prediction project. Further improvements will be iteratively applied based on performance feedback.**
