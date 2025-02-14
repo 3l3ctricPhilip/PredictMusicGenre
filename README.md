@@ -185,49 +185,61 @@ The **RandomForestClassifier** has been selected for further development due to 
 
 ## Model Performance Summary
 
-### Overall Accuracy
-The trained model achieved an **accuracy of 45.55%** on the validation dataset.
+### Overall Accuracy  
+The trained model achieved an accuracy of **45.55%** on the validation dataset.
 
-### Classification Report
+---
+
+## Classification Report  
+
 Below is a detailed breakdown of the model's performance across different genres:
 
-| Class | Precision | Recall | F1-Score | Support |
-|--------|------------|--------|----------|---------|
-| **0**  | 0.41      | 0.29   | 0.34     | 971     |
-| **1**  | 0.45      | 0.57   | 0.50     | 1135    |
-| **2**  | 0.73      | 0.41   | 0.53     | 188     |
-| **3**  | 0.50      | 0.41   | 0.45     | 817     |
-| **4**  | 0.42      | 0.56   | 0.48     | 1482    |
-| **5**  | 0.50      | 0.44   | 0.47     | 518     |
-| **6**  | 0.50      | 0.36   | 0.42     | 847     |
+| Genre     | Precision | Recall | F1-Score | Support |
+|-----------|-----------|--------|----------|---------|
+| **Blues**    | 0.41      | 0.29   | 0.34     | 971     |
+| **Country**  | 0.45      | 0.57   | 0.50     | 1135    |
+| **Hip Hop**  | 0.73      | 0.41   | 0.53     | 188     |
+| **Jazz**     | 0.50      | 0.41   | 0.45     | 817     |
+| **Pop**      | 0.42      | 0.56   | 0.48     | 1482    |
+| **Reggae**   | 0.50      | 0.44   | 0.47     | 518     |
+| **Rock**     | 0.50      | 0.36   | 0.42     | 847     |
 
-### Aggregate Metrics
-- **Accuracy:** 45.55%
-- **Macro Average:** Precision = 50%, Recall = 44%, F1-Score = 46%
-- **Weighted Average:** Precision = 46%, Recall = 46%, F1-Score = 45%
+---
 
-## Confusion Matrix
+### Aggregate Metrics  
+
+- **Accuracy:** **45.55%**  
+- **Macro Average:** Precision = **50%**, Recall = **44%**, F1-Score = **46%**  
+- **Weighted Average:** Precision = **46%**, Recall = **46%**, F1-Score = **45%**  
+
+---
+
+## Confusion Matrix  
+
 Below is the confusion matrix visualization of the model's predictions:
 
 ![Confusion Matrix](confusion_matrix.png)
 
-## Analysis & Observations
-1. **Class Imbalance Issues:**
-   - Some classes (e.g., class **2**) have a **higher precision (0.73)** but lower recall (0.41), indicating that while it correctly identifies positive cases, it struggles to detect all relevant samples.
-   - Class **1** and **4** have relatively better recall, meaning the model detects more of their instances correctly.
+---
 
-2. **Performance Improvement Areas:**
-   - **Increase Recall for Class 0 & 6:** These classes have relatively low recall, meaning the model misses many actual instances.
-   - **Fine-tune Hyperparameters:** Adjust `n_estimators`, `max_depth`, and learning rate to improve predictive performance.
-   - **Feature Engineering:** Explore additional transformations to improve separation between genres.
-   - **Balance the Dataset:** Apply **oversampling** (e.g., SMOTE) or **undersampling** to ensure even representation.
+## **Analysis & Observations**  
 
-## Next Steps
-- Implement hyperparameter tuning with `GridSearchCV` or `RandomizedSearchCV`.
-- Try **alternative models** such as XGBoost or LightGBM.
-- Optimize the **threshold for classification** to improve recall and precision balance.
-- Deploy the model and monitor real-world performance to refine further.
+### **Class Imbalance Issues:**  
+- Some genres (e.g., **Hip Hop**) have a **higher precision (0.73) but lower recall (0.41)**, meaning that while it correctly identifies positive cases, it struggles to detect all relevant samples.  
+- **Country (0.57 recall) and Pop (0.56 recall)** have relatively better recall, meaning the model detects more of their instances correctly.
+
+### **Performance Improvement Areas:**  
+- **Increase Recall for Blues & Rock:** These genres have relatively low recall, meaning the model misses many actual instances.  
+- **Fine-tune Hyperparameters:** Adjust `n_estimators`, `max_depth`, and `learning_rate` to improve predictive performance.  
+- **Feature Engineering:** Explore additional transformations to improve separation between genres.  
+- **Balance the Dataset:** Apply **oversampling (e.g., SMOTE)** or **undersampling** to ensure even representation across genres.
 
 ---
 
-**This document serves as the model evaluation summary for the Music Genre Prediction project. Further improvements will be iteratively applied based on performance feedback.**
+## **Next Steps**  
+**Implement Hyperparameter Tuning** using **GridSearchCV** or **RandomizedSearchCV**  
+**Try Alternative Models** such as **XGBoost** or **LightGBM**  
+**Optimize the Classification Threshold** to improve recall and precision balance  
+**Deploy the Model** and monitor real-world performance to refine further  
+
+This document serves as the **model evaluation summary** for the **Music Genre Prediction** project. Further improvements will be iteratively applied based on performance feedback. 
