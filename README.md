@@ -120,3 +120,63 @@ This section summarizes the findings and insights gained from the automated data
    - Models like **Random Forest** and **Gradient Boosting** can handle the dataset's characteristics effectively.
    - For reduced dimensions, linear models might be explored.
 
+## Recommended Models
+### 1. GaussianNB (Naive Bayes)
+**Description:**
+Gaussian Naive Bayes is a probabilistic classifier that assumes the features follow a normal distribution. It is simple, efficient, and works well with small datasets. However, it is less effective when dealing with complex feature interactions.
+
+**Details:**
+- Generation: 0
+- Mutation count: 0
+- Crossover count: 0
+- Internal cross-validation score: 0.3410
+
+**Pros:**
+- Fast and lightweight
+- Works well with smaller datasets
+- Good for problems with normally distributed features
+
+**Cons:**
+- Assumes independence of features, which may not hold in real-world scenarios
+- Lower accuracy compared to more complex models
+
+### 2. RandomForestClassifier
+**Description:**
+Random Forest is an ensemble learning method that constructs multiple decision trees and combines their predictions. It is robust, handles missing values well, and is less prone to overfitting.
+
+**Details:**
+- Generation: 0
+- Mutation count: 0
+- Crossover count: 0
+- Internal cross-validation score: 0.4449
+
+**Pros:**
+- High accuracy
+- Handles both numerical and categorical data
+- Reduces overfitting by averaging multiple decision trees
+
+**Cons:**
+- Slower compared to simpler models
+- Requires more memory and computational power
+
+### 3. XGBClassifier (Extreme Gradient Boosting)
+**Description:**
+XGBoost is a powerful gradient boosting framework optimized for speed and performance. It builds multiple weak models sequentially and corrects their errors iteratively.
+
+**Details:**
+- Generation: 0
+- Mutation count: 0
+- Crossover count: 0
+- Internal cross-validation score: -inf (Indicating poor performance or convergence issues)
+
+**Pros:**
+- Highly accurate
+- Efficient with large datasets
+- Handles missing values well
+
+**Cons:**
+- Computationally expensive
+- Requires careful hyperparameter tuning
+
+## Chosen Model for Further Development
+The **RandomForestClassifier** has been selected for further development due to its balance between accuracy, interpretability, and robustness. It outperforms GaussianNB in terms of accuracy and is more stable than XGBoost, which showed convergence issues in this case. Random Forest’s ability to handle diverse feature sets makes it well-suited for music genre classification.
